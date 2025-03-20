@@ -1,0 +1,319 @@
+.user-dashboard {
+  padding: 80px 40px 40px 40px; /* Top padding for fixed navbar */
+  margin-left: 250px; /* Space for sidebar */
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.dashboard-title {
+  margin-bottom: 40px;
+  text-align: center;
+  background: linear-gradient(90deg, #3498db, #2ecc71); /* Matches navbar */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.dashboard-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.dashboard-analytics {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Matches global card */
+}
+
+.section-title {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #34495e; /* Matches global heading */
+  font-weight: 600;
+  background: linear-gradient(90deg, #3498db, #2ecc71); /* Matches navbar */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.charts-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.chart-container h4 {
+  margin-bottom: 15px;
+  color: #34495e; /* Matches global heading */
+  font-weight: 500;
+}
+
+.dashboard-section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Matches global card */
+  transition: box-shadow 0.3s ease;
+}
+
+.dashboard-section:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Subtle hover effect */
+}
+
+.product-table,
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-table th,
+.product-table td,
+.order-table th,
+.order-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #dfe6e9; /* Matches global input border */
+}
+
+.product-table th,
+.order-table th {
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Matches navbar */
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-table tr,
+.order-table tr {
+  transition: background 0.3s ease;
+}
+
+.product-table tr:hover,
+.order-table tr:hover {
+  background: #f1f3f5; /* Light hover effect */
+}
+
+.product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+}
+
+.request-link,
+.track-link {
+  color: #3498db; /* Matches global link */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.request-link:hover,
+.track-link:hover {
+  background: rgba(52, 152, 219, 0.1);
+  text-decoration: underline;
+}
+
+/* Image Popup Styles */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeInOverlay 0.3s ease-out;
+}
+
+.image-modal-content {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+}
+
+.large-product-image {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b); /* Matches cancel button */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .user-dashboard {
+    padding: 70px 30px 30px 30px;
+  }
+
+  .charts-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart-container {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .product-table,
+  .order-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-dashboard {
+    padding: 70px 20px 20px 20px;
+    margin-left: 0; /* No sidebar on mobile */
+  }
+
+  .dashboard-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .product-table th,
+  .product-table td,
+  .order-table th,
+  .order-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .product-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .image-modal-content {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-dashboard {
+    padding: 60px 15px 15px 15px;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .chart-container h4 {
+    font-size: 1.1rem;
+  }
+
+  .product-table th,
+  .product-table td,
+  .order-table th,
+  .order-table td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .product-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  .request-link,
+  .track-link {
+    padding: 3px 6px;
+    font-size: 0.9rem;
+  }
+
+  .close-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInOverlay {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.charts-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}

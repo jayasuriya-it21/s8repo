@@ -1,0 +1,221 @@
+.profile-container {
+  padding: 80px 40px 40px 40px; /* Top padding for fixed navbar */
+  margin-left: 250px; /* Space for sidebar */
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.profile-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Matches global card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px); /* Matches global card hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Matches global card hover */
+}
+
+.profile-title {
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(90deg, #3498db, #2ecc71); /* Matches navbar */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.profile-image-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3498db; /* Matches global link */
+  box-shadow: 0 3px 15px rgba(52, 152, 219, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.profile-image-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #dfe6e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+  font-size: 1rem;
+  border: 3px dashed #b2bec3;
+  transition: background 0.3s ease;
+}
+
+.profile-image-placeholder:hover {
+  background: #e8ecef;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-field {
+  padding: 15px;
+  background: #f9fbfc;
+  border-radius: 10px; /* Slightly more rounded */
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.profile-field:hover {
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  background: #f1f3f5;
+}
+
+.field-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34495e; /* Matches global heading */
+}
+
+.field-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field-display span {
+  font-size: 1rem;
+  color: #636e72;
+}
+
+.edit-icon {
+  font-size: 1.2rem;
+  color: #3498db; /* Matches global link */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.edit-icon:hover {
+  color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.1);
+}
+
+.field-edit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-input {
+  flex: 1;
+  padding: 10px; /* Slightly more padding */
+  border: 1px solid #dfe6e9; /* Matches global input */
+  border-radius: 8px; /* Matches global input */
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.field-input:focus {
+  border-color: #3498db; /* Matches global input focus */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+.file-input {
+  padding: 5px 0; /* Adjusted for file input */
+  border: none;
+}
+
+.save-icon {
+  font-size: 1.2rem;
+  color: #2ecc71; /* Green for save */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.save-icon:hover {
+  color: #27ae60; /* Darker green on hover */
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .profile-container {
+    padding: 70px 30px 30px 30px;
+  }
+
+  .profile-card {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 70px 20px 20px 20px;
+    margin-left: 0; /* No sidebar on mobile */
+  }
+
+  .profile-card {
+    padding: 20px;
+  }
+
+  .profile-image, .profile-image-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 60px 15px 15px 15px;
+  }
+
+  .profile-card {
+    padding: 15px;
+  }
+
+  .profile-title {
+    font-size: 1.5rem; /* Adjusted for mobile */
+  }
+
+  .profile-image, .profile-image-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+
+  .field-label {
+    font-size: 1rem;
+  }
+
+  .field-display span, .field-input {
+    font-size: 0.9rem;
+  }
+
+  .edit-icon, .save-icon {
+    font-size: 1rem;
+  }
+
+  .profile-field {
+    padding: 10px;
+  }
+}
+
+/* Reuse global fadeIn animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,117 @@
+.materials-container {
+  padding: 80px 40px 40px 40px; /* Top padding for fixed navbar */
+  margin-left: 250px; /* Space for sidebar */
+  min-height: 100vh;
+  transition: margin-left 0.3s ease; /* Smooth sidebar toggle */
+}
+
+/* Use global container class */
+.materials-container .container {
+  max-width: 700px; /* Slightly wider for better layout */
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Use global card class */
+.materials-card {
+  border-radius: 12px; /* More rounded than global default */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Matches global card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Matches global card */
+}
+
+.materials-card:hover {
+  transform: translateY(-5px); /* Matches global card hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Matches global card hover */
+}
+
+.materials-title {
+  margin-bottom: 24px;
+  text-align: center;
+  background: linear-gradient(90deg, #3498db, #2ecc71); /* Matches navbar title */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.materials-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.material-item {
+  padding: 16px;
+  background: #f9fbfc; /* Light, modern background */
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.material-item:hover {
+  background: #f1f3f5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.material-item span {
+  color: #3498db; /* Matches global link color */
+  font-weight: 500;
+}
+
+/* Responsive Design (Aligned with global.css breakpoints) */
+@media (max-width: 1024px) {
+  .materials-container {
+    padding: 70px 30px 30px 30px;
+  }
+
+  .materials-container .container {
+    max-width: 600px;
+  }
+
+  .material-item {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .materials-container {
+    padding: 70px 20px 20px 20px;
+    margin-left: 0; /* No sidebar on mobile */
+  }
+
+  .materials-container .container {
+    padding: 20px;
+  }
+
+  .material-item {
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .materials-container {
+    padding: 60px 15px 15px 15px;
+  }
+
+  .materials-container .container {
+    padding: 15px;
+  }
+
+  .material-item {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Reuse global fadeIn animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

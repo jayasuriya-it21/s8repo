@@ -1,0 +1,224 @@
+@import url('../../styles/global.css');
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #2d3748 0%, #4a5568 100%);
+  color: #edf2f7;
+  position: fixed; /* Already fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+/* Navbar Title */
+.navbar-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #3182ce, #63b3ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.navbar-title:hover {
+  transform: scale(1.05);
+}
+
+/* Menu Toggle Button (Visible on Mobile) */
+.menu-toggle {
+  display: none; /* Hidden by default on larger screens */
+  background: none;
+  border: none;
+  color: #edf2f7;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Links Container */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition: all 0.3s ease;
+}
+
+/* Nav Links */
+.nav-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: rgba(49, 130, 206, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #3182ce;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Logout Button */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #f687b3, #ed64a6);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(246, 135, 179, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #ed64a6, #d53f8c);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(246, 135, 179, 0.5);
+}
+
+.logout-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  transition: left 0.4s ease;
+}
+
+.logout-btn:hover::before {
+  left: 100%;
+}
+
+.logout-icon {
+  font-size: 1.125rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 12px 25px;
+  }
+  .navbar-title {
+    font-size: 1.75rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+    padding: 6px 16px;
+  }
+  .logout-btn {
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+  }
+  .navbar-title {
+    font-size: 1.625rem;
+  }
+  .menu-toggle {
+    display: block; /* Show toggle button on smaller screens */
+  }
+  .navbar-links {
+    display: none; /* Hidden by default on mobile */
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 0;
+  }
+  .navbar-links.open {
+    display: flex; /* Show when toggled */
+  }
+  .nav-link {
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+  }
+  .logout-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  .navbar-title {
+    font-size: 1.5rem;
+  }
+  .navbar-links {
+    gap: 10px;
+  }
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 8px 15px;
+  }
+  .logout-btn {
+    font-size: 0.95rem;
+    padding: 8px 15px;
+  }
+}
+
+/* Animation */
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.navbar {
+  animation: slideDown 0.6s ease-out;
+}

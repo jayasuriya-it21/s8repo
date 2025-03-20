@@ -1,0 +1,37 @@
+.reports {
+    margin-left: 270px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reports-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .charts-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .chart-card {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 48%;
+    text-align: center;
+    min-height: 350px;
+  }
+  
+  .loading-text {
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .error-text {
+    text-align: center;
+    color: red;
+  }

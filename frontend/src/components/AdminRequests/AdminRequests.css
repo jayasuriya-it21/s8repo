@@ -1,0 +1,174 @@
+.admin-requests-container {
+  padding: 80px 40px 40px 40px; /* Top padding for fixed navbar */
+  margin-left: 250px; /* Space for sidebar */
+  min-height: 100vh;
+  transition: margin-left 0.3s ease; /* Smooth sidebar toggle */
+}
+
+/* Use global container class */
+.admin-requests-container .container {
+  max-width: 800px; /* Slightly wider than original for better layout */
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Use global card class */
+.request-card {
+  border-radius: 12px; /* Slightly more rounded */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Matches global card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Matches global card */
+}
+
+.request-card:hover {
+  transform: translateY(-5px); /* Matches global card hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Matches global card hover */
+}
+
+.admin-requests-title {
+  margin-bottom: 24px;
+  text-align: center;
+  background: linear-gradient(90deg, #3498db, #2ecc71); /* Matches navbar title */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.request-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.request-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f9fbfc; /* Lighter, modern bg */
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.request-item:hover {
+  background: #f1f3f5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.status-text {
+  color: #3498db; /* Matches global link color */
+  font-weight: 500;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px; /* More spacing for modern feel */
+}
+
+.approve-btn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60); /* Vibrant green gradient */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px; /* Matches global button radius */
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(46, 204, 113, 0.3);
+  transition: all 0.3s ease;
+}
+
+.approve-btn:hover {
+  background: linear-gradient(135deg, #27ae60, #219653);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.5);
+}
+
+.reject-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b); /* Matches navbar logout */
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px; /* Matches global button radius */
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+  transition: all 0.3s ease;
+}
+
+.reject-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(231, 76, 60, 0.5);
+}
+
+/* Responsive Design (Aligned with global.css breakpoints) */
+@media (max-width: 1024px) {
+  .admin-requests-container {
+    padding: 70px 30px 30px 30px;
+  }
+
+  .admin-requests-container .container {
+    max-width: 600px;
+  }
+
+  .request-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .action-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-requests-container {
+    padding: 70px 20px 20px 20px;
+    margin-left: 0; /* No sidebar on mobile */
+  }
+
+  .admin-requests-container .container {
+    padding: 20px;
+  }
+
+  .request-item {
+    padding: 12px;
+  }
+
+  .approve-btn, .reject-btn {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-requests-container {
+    padding: 60px 15px 15px 15px;
+  }
+
+  .admin-requests-container .container {
+    padding: 15px;
+  }
+
+  .request-item {
+    padding: 10px;
+  }
+
+  .approve-btn, .reject-btn {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    width: 48%; /* Buttons side-by-side with small gap */
+  }
+
+  .action-buttons {
+    gap: 8px;
+  }
+}
+
+/* Reuse global fadeIn animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
